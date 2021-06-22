@@ -1,0 +1,1 @@
+web: gunicorn aidea999.wsgi --access-logfile -
