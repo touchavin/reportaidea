@@ -35,7 +35,53 @@
     <link rel="stylesheet" href="{% static 'assets/mobirise/css/mbr-additional.css' %}" type="text/css">
     <title>Aidea</title>
 
-    <style media="screen">
+    <style media="screen"> 
+        
+        
+        
+        
+        
+        #subject{
+            padding: 10px;
+            color:black;
+            background-color:#FFFFFF;
+            border: 1px solid #8A97A3;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 351px;
+            height: 40px;
+           
+
+        }
+
+        #topic{
+            padding: 10px;
+            color:black;
+            background-color:#FFFFFF;
+            border: 1px solid #8A97A3;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 351px;
+            height: 40px;
+
+        }
+
+
+
+        #chapter{
+            padding: 10px;
+            color:black;
+            background-color:#FFFFFF;
+            border: 1px solid #8A97A3;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 351px;
+            height: 40px;
+
+        }
+
+
+
         #Customer_number{
             padding: 10px;
             color:black;
@@ -49,9 +95,9 @@
         }
         #image{
             padding: 10px;
-            color:gray;
-            background-color:rgb(204, 244, 237 ) ;
-            border: 1px solid #000;
+            color: rgb(gray ) ;
+            background-color: rgb(204, 244, 237 )  ;
+            border: 1px solid  rgb(gray) ;
             border-radius: 5px;
             cursor: pointer;
         }
@@ -138,7 +184,7 @@
 </head>
 
 
- <div class="container-fluid" style=" padding-top: 40px; border-radius: 50%">
+ <div class="container-fluid" style=" padding-top: 50px; border-radius: 50%">
                 <section class="header2 cid-sy1JJ6nFZN  mbr-parallax-background"  id="header2-k" >
 
                      <div class="mbr-overlay" style="  border-radius: 15PX; opacity: 0.5; background-color: rgb(204, 244, 237 ) " > </div>
@@ -147,15 +193,15 @@
             
                         
                              <div class="row">
-                                <div class="col-2  float-left  " >                                         
-                                    <img src="{% static 'image/7.png' %}" style="width: 88%; margin-top: 75%;">
+                                <div class="col-3  float-left  " >                                         
+                                    <img src="{% static 'image/7.png' %}" style="width: 60px; margin-top: 5px;">
                                 
                                     
                                 </div>
 
-                                <div class="col-10   display-6 text-center " style="margin-top: 10%;  margin-bottom: 10%;"  > 
+                                <div class="col-9   display-6 text-center " style="margin-top: 30px;  margin-bottom: 0px;"  > 
                        
-                                            <h2 style="font-size: 18px" >อัพโหลดไฟล์รูปภาพอุปกรณชำรุด</h2>
+                                            <h4 style="font-size: 15px" >อัพโหลดไฟล์รูปภาพอุปกรณ์ชำรุด</h4>
                                 </div> 
                         
                             </div>
@@ -166,25 +212,24 @@
                 </section>
             </div>
 <!-- upload file-->
-<br>
+
             <div class="container-fluid " >
                 <div class="container">
                     <div class="form-group row">
                        
-                        <h6 style="color:black;">อัพโหลดไฟล์รูปภาพ</h6>
+                        <h6 style="color:black; margin-top: 20px;">อัพโหลดไฟล์รูปภาพ</h6>
                         <div class="col-sm-5">
-                            <div class="custom-file">
+                            <div class="custom-file col-5">
                                 <!-- <input type="file" name="image" id="filepicture" class="custom-file-input" multiple> -->
-                                <input " type="file" name="image" id="image" accept="image/*" />
+                                <input  type="file" name="image" id="image" accept="image/*" />
                                 <!-- <input type="file" name="filepicture[]" id="filepicture" multiple> -->
                                 <label class="custom-file-label"></label>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <div class="col-sm-5 offset-sm-4">
-                        </div>
-                    </div>
+                </div>
+            
+                    
                   
                     <!-- <div class="form-group row">
 
@@ -197,7 +242,7 @@
                         <br>
                     </div> -->
 
-                </div>
+               
 
 <div class="container-fluid ">
     <div class="container">
@@ -234,31 +279,33 @@
         </select>    </div>-->
             
      
-     <div class="container-fluid" name="form1" id="form1" action="/action_page.php">
+     <!-- <div class="container-fluid" name="form1" id="form1" action="/action_page.php">
         <div class="row">
             <div class="container">
                 <label name="subject" >ระบบแรงดัน</label>
-                <input class="col-12" style="border-radius: 5PX; margin-bottom: 10px;"stary="border-radius: 5PX;"type="text"  id="subject" name="Customer_number" placeholder="ระบุรหัสพนักงาน">
-        <!--<form name="form1" id="form1" action="/action_page.php">
+                <input class="col-12" style="border-radius: 5PX; margin-bottom: 10px;"stary="border-radius: 5PX;"type="text"  id="form1" name="subject" action="/action_page.php" placeholder="ระบุรหัสพนักงาน"> -->
+       
+       
+      <form name="form1" id="form1" action="/action_page.php">
             
-            <!-- ระบบแรงดัน: <select name="subject" id="subject">
-            <option value="" selected="selected">ระบบแรงดัน</option> -->
-          
+            ระบบแรงดัน <select name="subject" id="subject" class="col-12" style="border-radius: 5PX; margin-bottom: 20px;"stary="border-radius: 5PX;">
+            <option value="" selected="selected" ><h1 style=" color: lightgrey; background-color: lightgrey;">ระบบแรงดัน</h1></option> 
+<!--           
             <div name="form1" id="form1" action="/action_page.php"></div>
                 <select name="subject" id="subject">รหัสพนักงาน</select>
                 <option value="" selected="selected">ระบบแรงดัน</option>
-            </div>
+            </div> -->
         
         </select>
-            <br><br>
-             ชนิดอุปกรณ์: <select name="topic" id="topic">
-            <option value="" selected="selected">ชนิดอุปกรณ์</option>
+              
+             ชนิดอุปกรณ์ <select name="topic" id="topic" class="col-12" style="border-radius: 5PX; margin-bottom: 20px;"stary="border-radius: 5PX;">
+            <option value="" selected="selected" style="color: lightgrey; background-color: lightgrey;">ชนิดอุปกรณ์</option>
           </select>
-            <br><br> 
-            สาเหตุการชำรุด: <select name="chapter" id="chapter">
+            
+            สาเหตุการชำรุด <select name="chapter" id="chapter" class="col-12" style="border-radius: 5PX; margin-bottom: 20px;"stary="border-radius: 5PX;">
             <option value="" selected="selected">สาเหตุการชำรุด</option>
           </select>
-            <br><br>
+            
 
 
             <!-- block image no file -->
@@ -279,7 +326,7 @@
             <!-- Upload file -->
 
             <div class="container-fluid ">
-                <div class="container">
+                <div class="container" style="">
                     <!-- <label for="" class="col-sm-4 col-form-label text-right">อัพโหลดไฟล์รูปภาพ</label>
                         <h6 style="color:Tomato;">คำเตือน!!กรุณาเลือกไฟล์อัพโหลด.</h6>
                         <div class="col-sm-5">
@@ -296,26 +343,33 @@
                         <div class="col-sm-5 offset-sm-4">
                         </div>
                     </div>
-                    <br>
-                    <div class="form-group row">
+                 
+                    <div class="form-group row" >
 
-                        <div class="container">
-                            <input type="submit" class="btn btn-primary" name="action" id="btn_submit" value="อัพโหลดไฟล์รูปภาพ" disabled />
-                            </button>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-1">
+                                 </div>
 
+                                <div class="col-12 container" style="left: 20%;    ">
+                                 
+                                   <input type="submit" stary="text-align: center;"  class="col-8  border border-light p-3 mb-4 border: rgb(204, 244, 237 " name="action" id="btn_submit" value="อัพโหลดไฟล์รูปภาพ" disabled />
+                                </div>
+
+                                <div class="col-1">
+                                </div>
                         </div>
-                        <br>
-                        <br>
+                        
                     </div>
 
                 </div>
-                <br>
+                
 <!-- 
                 <div class="container">
                     <img class="img-fluid" background-image src="{% static 'image/9.png' %}" alt="Chania" width="250" height="250">
                 </div> -->
 
-                <div class="container">
+                <div class="container border border-light p-3 mb-4">
                     <a href="/register/" target="_blank" class="btn btn-primary" role="button">กลับหน้าหลัก</a>
                 </div>
 

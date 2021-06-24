@@ -6,14 +6,117 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <title>Aidea</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">   ใช้แล้วโหลดไม่ได้-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v5.3.5, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="{% static 'image/6.png' %}" type="image/x-icon">
+    <meta name="description" content="">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
-
-
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'assets/web/assets/mobirise-icons2/mobirise2.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/tether/tether.min.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}"> ใชไม่ได้-->
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-reboot.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/dropdown/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/socicon/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/theme/css/style.css' %}">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Prompt:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"></noscript>
+    <link rel="preload" as="style" href="cassets/mobirise/css/mbr-additional.css">
+    <link rel="stylesheet" href="{% static 'assets/mobirise/css/mbr-additional.css' %}" type="text/css">
     <title>Aidea</title>
+
+    <style media="screen"> 
+        
+        
+        
+        
+        
+        #subject{
+            padding: 10px;
+            color:black;
+            background-color:#FFFFFF;
+            border: 1px solid #8A97A3;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 351px;
+            height: 40px;
+           
+
+        }
+
+        #topic{
+            padding: 10px;
+            color:black;
+            background-color:#FFFFFF;
+            border: 1px solid #8A97A3;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 351px;
+            height: 40px;
+
+        }
+
+
+
+        #chapter{
+            padding: 10px;
+            color:black;
+            background-color:#FFFFFF;
+            border: 1px solid #8A97A3;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 351px;
+            height: 40px;
+
+        }
+
+
+
+        #Customer_number{
+            padding: 10px;
+            color:black;
+            background-color:#FFFFFF;
+            border: 1px solid #8A97A3;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 351px;
+            height: 40px;
+
+        }
+        #image{
+            padding: 10px;
+            color: rgb(gray ) ;
+            background-color: rgb(204, 244, 237 )  ;
+            border: 1px solid  rgb(gray) ;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #image:hover{
+            
+            background-color:rgb(204, 244, 237 ) ;
+            
+        }
+        .ChooseFile {
+            padding: 10px;
+            color:gray;
+            background-color:rgb(204, 244, 237 ) ;
+            border: 1px solid #000;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+    </style>
     <form name="myform" method="POST" enctype="multipart/form-data">
 
         {% csrf_token %}
@@ -104,9 +207,9 @@
             <div class="formBox">
                 <label for="fname">รหัสพนักงาน:</label>
                 <input type="text" id="Customer_number" name="Customer_number" placeholder="ระบุรหัสพนักงาน"><br><br>
-                <label for="PEA">สำนักงานการไฟฟ้าส่วนภูมิภาคเขต:</label>
-                <select name="Pea" id="Pea">
-        <option value="no">ระบุสำนักงานการไฟฟ้าส่วนภูมิภาคเขต</option>
+                <!-- <label for="PEA">สำนักงานการไฟฟ้าส่วนภูมิภาคเขต:</label>
+                <select name="Pea" id="Pea"> -->
+        <!-- <option value="no">ระบุสำนักงานการไฟฟ้าส่วนภูมิภาคเขต</option>
         <optgroup label="ภาคเหนือ">
         <option value="A">เขต 1 จังหวัดเชียงใหม่</option>
         <option value="B">เขต 2 จังหวัดพิษณุโลก</option>
@@ -128,8 +231,8 @@
         <option value="L">เขต 3 จังหวัดยะลา</option>
         </optgroup>
         </select>
-                <br><br>
-            </div>
+                <br><br> -->
+            </div> 
 
             <form name="form1" id="form1" action="/action_page.php">
                 ระบบแรงดัน: <select name="subject" id="subject">
