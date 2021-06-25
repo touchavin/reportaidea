@@ -70,7 +70,9 @@ a {
   line-height: 1;
   word-break: break-word;
   word-wrap: break-word;
-  font-weight: 400;
+  font-weight: 400px;
+  font-family: 'Prompt', sans-serif;
+  
 }
 
 b,

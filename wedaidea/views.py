@@ -94,7 +94,7 @@ def bad(request): #หน้า bad
     if request.method == 'POST':
         print(request.POST)
         Customer_number = request.POST['Customer_number']
-        Office = request.POST['Pea']
+        
         Circuit = request.POST['subject']
         Accessory = request.POST['topic']
         Case = request.POST['chapter']
@@ -345,7 +345,7 @@ def bad(request): #หน้า bad
         timestr = time.strftime("%Y%m%d-%H%M%S")
 
 
-        f_image.name = "{}_{}_{}_{}_{}_{}{}".format(Customer_number, Office, Circuit, Accessory, Case, timestr, ext)
+        f_image.name = "{}_{}_{}_{}_{}{}".format(Customer_number, Circuit, Accessory, Case, timestr, ext)
         print(f_image.name)
 
 
@@ -372,10 +372,10 @@ def bad(request): #หน้า bad
 
 
         ## save ข้อมูลลง ฐานข้อมูล 
-        img = Image(Customer_number=Customer_number, Office=Office, Accessory=Accessory, Case=Case, Circuit=Circuit, pathimage=pathimage, image=f_image)
+        img = Image(Customer_number=Customer_number, Accessory=Accessory, Case=Case, Circuit=Circuit, pathimage=pathimage, image=f_image)
         img.save()
         
-        context={'data':{'Customer_number':Customer_number, 'Office':Office, 'Accessory':Accessory, 'Case':Case, 'Circuit':Circuit, 'patsimage':pathimage, 'image':f_image}}
+        context={'data':{'Customer_number':Customer_number, 'Accessory':Accessory, 'Case':Case, 'Circuit':Circuit, 'patsimage':pathimage, 'image':f_image}}
         ## save ข้อมูลลง ฐานข้อมูล 
 
     
@@ -389,7 +389,7 @@ def good(request): #หน้า good
     if request.method == 'POST':
         print(request.POST)
         Customer_number = request.POST['Customer_number']
-        Office = request.POST['Pea']
+        # Office = request.POST['Pea']
         Circuit = request.POST['subject']
         Accessory = request.POST['topic']
        
@@ -505,7 +505,7 @@ def good(request): #หน้า good
         timestr = time.strftime("%Y%m%d-%H%M%S")
 
         
-        f_image.name = "{}_{}_{}_{}_{}_{}{}".format(Customer_number, Office, Circuit, Accessory, Case, timestr, ext)
+        f_image.name = "{}_{}_{}_{}_{}{}".format(Customer_number, Circuit, Accessory, Case, timestr, ext)
         print(f_image.name)
 
         
@@ -532,10 +532,10 @@ def good(request): #หน้า good
 
 
         ## save ข้อมูลลง ฐานข้อมูล 
-        img = Image(Customer_number=Customer_number, Office=Office, Accessory=Accessory, Case=Case, Circuit=Circuit, pathimage=pathimage, image=f_image)
+        img = Image(Customer_number=Customer_number, Accessory=Accessory, Case=Case, Circuit=Circuit, pathimage=pathimage, image=f_image)
         img.save()
         
-        context={'data':{'Customer_number':Customer_number, 'Office':Office, 'Accessory':Accessory, 'Case':Case, 'Circuit':Circuit, 'patsimage':pathimage, 'image':f_image}}
+        context={'data':{'Customer_number':Customer_number, 'Accessory':Accessory, 'Case':Case, 'Circuit':Circuit, 'patsimage':pathimage, 'image':f_image}}
         ## save ข้อมูลลง ฐานข้อมูล 
 
     
