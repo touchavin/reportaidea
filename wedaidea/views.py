@@ -392,7 +392,7 @@ def good(request): #หน้า good
         Office = request.POST['Pea']
         Circuit = request.POST['subject']
         Accessory = request.POST['topic']
-        Case = request.POST['chapter']
+       
         f_image = request.FILES['image']
 
         # Add เปลี่ยนชื่อ รูป
@@ -407,19 +407,19 @@ def good(request): #หน้า good
 
 
         #115KV สายดิน
-        if  Circuit == "115KV" and Accessory == "สายดิน" and Case == "ปกติ":
+        if  Circuit == "115KV" and Accessory == "สายดิน":
             Accessory = "GR"
             Case ="GR10"
-        if  Circuit == "115KV" and Accessory == "ลูกถ้วย" and Case == "ปกติ":
+        if  Circuit == "115KV" and Accessory == "ลูกถ้วย":
             Accessory = "IN"
             Case ="IN10"
-        if  Circuit == "115KV" and Accessory == "สายไฟ" and Case == "ปกติ":
+        if  Circuit == "115KV" and Accessory == "สายไฟ":
             Accessory = "LI"
             Case ="LI10"
-        if  Circuit == "115KV" and Accessory == "สายดิน" and Case == "ปกติ":
+        if  Circuit == "115KV" and Accessory == "สายดิน":
             Accessory = "CO"
             Case ="CO10"
-        if  Circuit == "115KV" and Accessory == "สายดิน" and Case == "ปกติ":
+        if  Circuit == "115KV" and Accessory == "สายดิน":
             Accessory = "DS"
             Case ="DS10"
 
@@ -427,78 +427,78 @@ def good(request): #หน้า good
 
 
         #33KV สายดิน
-        if  Circuit == "33KV" and Accessory == "สายดิน" and Case == "ปกติ":
+        if  Circuit == "33KV" and Accessory == "สายดิน":
             Accessory = "GR"
             Case ="GR30"
-        if  Circuit == "33KV" and Accessory == "ลูกถ้วย" and Case == "ปกติ":
+        if  Circuit == "33KV" and Accessory == "ลูกถ้วย":
             Accessory = "IN"
             Case ="IN30"
-        if  Circuit == "33KV" and Accessory == "สายไฟ" and Case == "ปกติ":
+        if  Circuit == "33KV" and Accessory == "สายไฟ":
             Accessory = "LI"
             Case ="LI30"
-        if  Circuit == "33KV" and Accessory == "จุดต่อ" and Case == "ปกติ":
+        if  Circuit == "33KV" and Accessory == "จุดต่อ":
             Accessory = "CO"
             Case ="CO30"
-        if  Circuit == "33KV" and Accessory == "ล่อฟ้า" and Case == "ปกติ":
+        if  Circuit == "33KV" and Accessory == "ล่อฟ้า":
             Accessory = "LA"
             Case ="DS30"
-        if  Circuit == "33KV" and Accessory == "คาปาซิเตอร์" and Case == "ปกติ":
+        if  Circuit == "33KV" and Accessory == "คาปาซิเตอร์":
             Accessory = "CA"
             Case ="CO30"
-        if  Circuit == "33KV" and Accessory == "อุปกรณ์ตัดตอน" and Case == "ปกติ":
+        if  Circuit == "33KV" and Accessory == "อุปกรณ์ตัดตอน":
             Accessory = "DS"
             Case ="DS30"
 
 
          #33KV สายดิน
-        if  Circuit == "33KV" and Accessory == "สายดิน" and Case == "ปกติ":
+        if  Circuit == "33KV" and Accessory == "สายดิน":
             Accessory = "GR"
             Case ="GR30"
-        if  Circuit == "33KV" and Accessory == "ลูกถ้วย" and Case == "ปกติ":
+        if  Circuit == "33KV" and Accessory == "ลูกถ้วย":
             Accessory = "IN"
             Case ="IN30"
-        if  Circuit == "33KV" and Accessory == "สายไฟ" and Case == "ปกติ":
+        if  Circuit == "33KV" and Accessory == "สายไฟ":
             Accessory = "LI"
             Case ="LI30"
-        if  Circuit == "33KV" and Accessory == "จุดต่อ" and Case == "ปกติ":
+        if  Circuit == "33KV" and Accessory == "จุดต่อ":
             Accessory = "CO"
             Case ="CO30"
-        if  Circuit == "33KV" and Accessory == "ล่อฟ้า" and Case == "ปกติ":
+        if  Circuit == "33KV" and Accessory == "ล่อฟ้า":
             Accessory = "LA"
             Case ="LA30"
-        if  Circuit == "33KV" and Accessory == "คาปาซิเตอร์" and Case == "ปกติ":
+        if  Circuit == "33KV" and Accessory == "คาปาซิเตอร์":
             Accessory = "CA"
             Case ="CA30"
-        if  Circuit == "33KV" and Accessory == "อุปกรณ์ตัดตอน" and Case == "ปกติ":
+        if  Circuit == "33KV" and Accessory == "อุปกรณ์ตัดตอน":
             Accessory = "DS"
             Case ="DS30"
 
 
         #22KV สายดิน
-        if  Circuit == "22KV" and Accessory == "สายดิน" and Case == "ปกติ":
+        if  Circuit == "22KV" and Accessory == "สายดิน":
             Accessory = "GR"
             Case ="GR20"
-        if  Circuit == "22KV" and Accessory == "ลูกถ้วย" and Case == "ปกติ":
+        if  Circuit == "22KV" and Accessory == "ลูกถ้วย":
             Accessory = "IN"
             Case ="IN20"
-        if  Circuit == "22KV" and Accessory == "สายไฟ" and Case == "ปกติ":
+        if  Circuit == "22KV" and Accessory == "สายไฟ":
             Accessory = "LI"
             Case ="LI20"
-        if  Circuit == "22KV" and Accessory == "จุดต่อ" and Case == "ปกติ":
+        if  Circuit == "22KV" and Accessory == "จุดต่อ":
             Accessory = "CO"
             Case ="CO20"
-        if  Circuit == "22KV" and Accessory == "ล่อฟ้า" and Case == "ปกติ":
+        if  Circuit == "22KV" and Accessory == "ล่อฟ้า":
             Accessory = "LA"
             Case ="LA20"
-        if  Circuit == "22KV" and Accessory == "คาปาซิเตอร์" and Case == "ปกติ":
+        if  Circuit == "22KV" and Accessory == "คาปาซิเตอร์":
             Accessory = "CA"
             Case ="CA22"
-        if  Circuit == "22KV" and Accessory == "อุปกรณ์ตัดตอน" and Case == "ปกติ":
+        if  Circuit == "22KV" and Accessory == "อุปกรณ์ตัดตอน":
             Accessory = "DS"
             Case ="DS22"
 
 
-
+        Case = "GOOD"
 
         #timedate & time in Python
 
