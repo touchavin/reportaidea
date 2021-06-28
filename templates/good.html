@@ -165,8 +165,8 @@
                 for (var x in subjectObject) {
                     subjectSel.options[subjectSel.options.length] = new Option(x, x);
                 }
-                subjectSel.onchange = function() {    //empty Chapters- and Topics- dropdowns
-                       
+                subjectSel.onchange = function() {    //empty Chapters- and Topics- dropdowns
+                       
 
                     topicSel.length = 1;
                     //display correct values
@@ -177,143 +177,211 @@
 
             }
         </script>
-
-        <script>
-            function manage(file) {
-                var bt = document.getElementById('img');
-                if (file.value != '') {
-                    bt.disabled = false;
-                } else {
-                    bt.disabled = true;
-                }
-            }
-        </script>
 </head>
 
-<body>
-    <div class="jumbotron jumbotron-fluid ">
-        <div class="container">
-            <br>
-            <br>
-            <h1>อัพโหลดไฟล์รูปภาพปกติ</h1>
-            <div class="formBox">
-                <label for="fname">รหัสพนักงาน:</label>
-                <input type="text" id="Customer_number" name="Customer_number" placeholder="ระบุรหัสพนักงาน"><br><br>
-                <!-- <label for="PEA">สำนักงานการไฟฟ้าส่วนภูมิภาคเขต:</label>
-                <select name="Pea" id="Pea"> -->
-        <!-- <option value="no">ระบุสำนักงานการไฟฟ้าส่วนภูมิภาคเขต</option>
-        <optgroup label="ภาคเหนือ">
-        <option value="A">เขต 1 จังหวัดเชียงใหม่</option>
-        <option value="B">เขต 2 จังหวัดพิษณุโลก</option>
-        <option value="C">เขต 3 จังหวัดลพบุรี</option>
-        </optgroup>
-        <optgroup label="ภาคตะวันออกเฉียงเหนือ">
-        <option value="D">เขต 1 จังหวัดอุดรธาณี</option>
-        <option value="E">เขต 2 จังหวัดอุบลราชธาณี</option>
-        <option value="F">เขต 3 จังหวัดนครราชสีมา</option>
+
+<div class="container-fluid" style=" padding-top: 50px; border-radius: 50%">
+    <section class="header2 cid-sy1JJ6nFZN  mbr-parallax-background"  id="header2-k" >
+
+         <div class="mbr-overlay" style="  border-radius: 15PX; opacity: 0.5; background-color: rgb(204, 244, 237 ) " > </div>
+   
+         <div class="container">
+
+            
+                 <div class="row">
+                    <div class="col-3  float-left  " >                                         
+                        <img src="{% static 'image/7.png' %}" style="width: 60px; margin-top: 5px;">
+                    
+                        
+                    </div>
+
+                    <div class="col-9   display-6 text-center " style="margin-top: 30px;  margin-bottom: 0px;"  > 
+           
+                                <h4 style="font-size: 15px" >อัพโหลดไฟล์รูปภาพอุปกรณ์ปกติ</h4>
+                    </div> 
+            
+                </div>
+            
+    
+        </div>
+
+    </section>
+</div>
+<!-- upload file-->
+
+<div class="jumbotron jumbotron-fluid ">
+<div class="container">
+<div class="form-group row">
+<label for="" class="col-sm-4 col-form-label text-right"></label>
+<h6 style="color:Tomato;">คำเตือน!!กรุณาเลือกไฟล์อัพโหลด.</h6>
+<div class="col-sm-5">
+    <div class="custom-file">
+        <!-- <input type="file" name="image" id="filepicture" class="custom-file-input" multiple> -->
+        <input type="file" name="image" id="image" accept="image/*" />
+        <!-- <input type="file" name="filepicture[]" id="filepicture" multiple> -->
+        <label class="custom-file-label"></label>
+    </div>
+</div>
+</div>
+<div class="form-group row">
+<div class="col-sm-5 offset-sm-4">
+</div>
+</div>
+    </div>
+
         
-        <optgroup label="ภาคกลาง">
-        <option value="G">เขต 1 จังหวัดพระนครศรีอยุธยา</option>
-        <option value="H">เขต 2 จังหวัดชลบุรี</option>
-        <option value="I">เขต 3 จังหวัดนครปฐม</option>
-        </optgroup>
-        <optgroup label="ภาคใต้">
-        <option value="J">เขต 1 จังหวัดเพชรบุรี</option>
-        <option value="K">เขต 2 จังหวัดนครศรีธรรมราช</option>
-        <option value="L">เขต 3 จังหวัดยะลา</option>
-        </optgroup>
-        </select>
-                <br><br> -->
+      
+        <!-- <div class="form-group row">
+
+            <div class="container">
+                <input type="submit" class="btn btn-primary" name="action" id="btn_submit" value="อัพโหลดไฟล์รูปภาพ" disabled />
+                </button>
+
+            </div>
+            <br>
+            <br>
+        </div> -->
+
+   
+
+<div class="container-fluid ">
+<div class="container">
+
+
+<div class="formBox" ">
+<label for="fname" style="font-size: 16px ">รหัสพนักงาน</label>
+<input class="col-12" style="border-radius: 5PX; margin-bottom: 10px;"stary="border-radius: 5PX;"type="text"  id="Customer_number" name="Customer_number" placeholder="ระบุรหัสพนักงาน">
+</div>
+<!-- <label for="ระบุสำนักงานการไฟฟ้าส่วนภูมิภาคเขต">สำนักงานการไฟฟ้าส่วนภูมิภาคเขต:</label>
+
+<select name="Pea" id="Pea">
+<option value="no" placeholder="ระบุรหัสพนักงาน">ระบุสำนักงานการไฟฟ้าส่วนภูมิภาคเขต</option>
+<optgroup label="ภาคเหนือ">
+<option value="A">เขต 1 จังหวัดเชียงใหม่</option>
+<option value="B">เขต 2 จังหวัดพิษณุโลก</option>
+<option value="C">เขต 3 จังหวัดลพบุรี</option>
+</optgroup>
+<optgroup label="ภาคตะวันออกเฉียงเหนือ">
+<option value="D">เขต 1 จังหวัดอุดรธาณี</option>
+<option value="E">เขต 2 จังหวัดอุบลราชธาณี</option>
+<option value="F">เขต 3 จังหวัดนครราชสีมา</option>
+
+<optgroup label="ภาคกลาง">
+<option value="G">เขต 1 จังหวัดพระนครศรีอยุธยา</option>
+<option value="H">เขต 2 จังหวัดชลบุรี</option>
+<option value="I">เขต 3 จังหวัดนครปฐม</option>
+</optgroup>
+<optgroup label="ภาคใต้">
+<option value="J">เขต 1 จังหวัดเพชรบุรี</option>
+<option value="K">เขต 2 จังหวัดนครศรีธรรมราช</option>
+<option value="L">เขต 3 จังหวัดยะลา</option>
+</optgroup>
+</select>    </div>-->
+
+
+<!-- <div class="container-fluid" name="form1" id="form1" action="/action_page.php">
+<div class="row">
+<div class="container">
+    <label name="subject" >ระบบแรงดัน</label>
+    <input class="col-12" style="border-radius: 5PX; margin-bottom: 10px;"stary="border-radius: 5PX;"type="text"  id="form1" name="subject" action="/action_page.php" placeholder="ระบุรหัสพนักงาน"> -->
+
+
+<form name="form1" id="form1" action="/action_page.php">
+
+ระบบแรงดัน <select name="subject" id="subject" class="col-12" style="border-radius: 5PX; margin-bottom: 20px;"stary="border-radius: 5PX;">
+<option value="" selected="selected" ><h1 style=" color: lightgrey; background-color: lightgrey;">ระบบแรงดัน</h1></option> 
+<!--           
+<div name="form1" id="form1" action="/action_page.php"></div>
+    <select name="subject" id="subject">รหัสพนักงาน</select>
+    <option value="" selected="selected">ระบบแรงดัน</option>
+</div> -->
+
+</select>
+  
+ <br>ชนิดอุปกรณ์ <select name="topic" id="topic" class="col-12" style="border-radius: 5PX; margin-bottom: 20px;"stary="border-radius: 5PX;">
+<option value="" selected="selected" style="color: lightgrey; background-color: lightgrey;">ชนิดอุปกรณ์</option>
+</select>
+
+
+
+
+
+<!-- block image no file -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(
+        function() {
+            $('input:file').change(
+                function() {
+                    if ($(this).val()) {
+                        $('input:submit').attr('disabled', false);
+                    }
+                }
+            );
+        });
+</script>
+<!-- Upload file -->
+
+<div class="container-fluid ">
+    <div class="container" style="">
+        <!-- <label for="" class="col-sm-4 col-form-label text-right">อัพโหลดไฟล์รูปภาพ</label>
+            <h6 style="color:Tomato;">คำเตือน!!กรุณาเลือกไฟล์อัพโหลด.</h6>
+            <div class="col-sm-5">
+                <div class="custom-file">
+             iv class="form-group row">
+            <       <!-- <input type="file" name="image" id="filepicture" class="custom-file-input" multiple> -->
+                   <!-- <input type="file" name="image" id="image" accept="image/*" />
+                    <!-- <input type="file" name="filepicture[]" id="filepicture" multiple> -->
+                    <label class="custom-file-label"></label>
+                </div>
             </div> 
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-5 offset-sm-4">
+            </div>
+        </div>
+     
+        <div class="form-group row" >
 
-            <form name="form1" id="form1" action="/action_page.php">
-                ระบบแรงดัน: <select name="subject" id="subject">
-            <option value="" selected="selected">ระบบแรงดัน</option>
-          </select>
-                <br><br> ชนิดอุปกรณ์: <select name="topic" id="topic">
-            <option value="" selected="selected">ชนิดอุปกรณ์</option>
-          </select>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-1">
+                     </div>
 
-                <br><br>
+                    <div class="col-12 container" style="left: 20%;    ">
+                     
+                       <input type="submit" stary="text-align: center;"  class="col-8  border border-light p-3 mb-4 border: rgb(204, 244, 237 " name="action" id="btn_submit" value="อัพโหลดไฟล์รูปภาพ" disabled />
+                    </div>
 
+                    <div class="col-1">
+                    </div>
+            </div>
+            
+        </div>
 
-                
+    </div>
+    
+<!-- 
+    <div class="container">
+        <img class="img-fluid" background-image src="{% static 'image/9.png' %}" alt="Chania" width="250" height="250">
+    </div> -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <div class="container border border-light p-3 mb-4">
+        <a href="/register/" target="_blank" class="btn btn-primary" role="button">กลับหน้าหลัก</a>
+    </div>
 
-                <!-- block image no file -->
+</form>
 
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                <script>
-                    $(document).ready(
-                        function() {
-                            $('input:file').change(
-                                function() {
-                                    if ($(this).val()) {
-                                        $('input:submit').attr('disabled', false);
-                                    }
-                                }
-                            );
-                        });
-                </script>
+<!-- Optional JavaScript; choose one of the two! -->
 
+<!-- Option 1: Bootstrap Bundle with Popper -->
 
-                <!-- Upload file -->
-
-                <div class="jumbotron jumbotron-fluid ">
-                    <div class="container">
-                        <div class="form-group row">
-                            <label for="" class="col-sm-4 col-form-label text-right">อัพโหลดไฟล์รูปภาพ</label>
-                            <h6 style="color:Tomato;">คำเตือน!!กรุณาเลือกไฟล์อัพโหลด.</h6>
-                            <div class="col-sm-5">
-                                <div class="custom-file">
-                                    <!-- <input type="file" name="image" id="filepicture" class="custom-file-input" multiple> -->
-                                    <input type="file" name="image" id="image" accept="image/*" />
-                                    <!-- <input type="file" name="filepicture[]" id="filepicture" multiple> -->
-                                    <label class="custom-file-label"></label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-5 offset-sm-4">
-                            </div>
-                        </div>
-                        <br>
-                        <div class="form-group row">
-
-                            <div class="container">
-                                <input type="submit" class="btn btn-primary" name="action" id="btn_submit" value="อัพโหลดไฟล์รูปภาพ" disabled />
-                                </button>
-
-                            </div>
-                            <br>
-                            <br>
-
-                        </div>
-                        <br>
-
-                        <div class="container">
-                            <img class="img-fluid" background-image src="{% static 'image/9.png' %}" alt="Chania" width="250" height="250">
-                        </div>
-
-                        <div class="container">
-                            <a href="/register/" target="_blank" class="btn btn-primary" role="button">กลับหน้าหลัก</a>
-                        </div>
-
-
-
-            </form>
-
-            <!-- Optional JavaScript; choose one of the two! -->
-
-            <!-- Option 1: Bootstrap Bundle with Popper -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
-            <!-- Option 2: Separate Popper and Bootstrap JS -->
-            <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-    -->
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+-->
 </body>
 
 

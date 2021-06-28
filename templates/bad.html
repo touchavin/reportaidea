@@ -161,17 +161,17 @@
                 for (var x in subjectObject) {
                     subjectSel.options[subjectSel.options.length] = new Option(x, x);
                 }
-                subjectSel.onchange = function() {    //empty Chapters- and Topics- dropdowns
-                       
-                    chapterSel.length = 1;   
+                subjectSel.onchange = function() {    //empty Chapters- and Topics- dropdowns
+                       
+                    chapterSel.length = 1;   
                     topicSel.length = 1;
                     //display correct values
                     for (var y in subjectObject[this.value]) {
                         topicSel.options[topicSel.options.length] = new Option(y, y);
                     }
                 }
-                topicSel.onchange = function() {    //empty Chapters dropdown
-                       
+                topicSel.onchange = function() {    //empty Chapters dropdown
+                       
                     chapterSel.length = 1;
                     //display correct values
                     var z = subjectObject[subjectSel.value][this.value];
@@ -213,20 +213,24 @@
             </div>
 <!-- upload file-->
 
-            <div class="container-fluid " >
-                <div class="container">
-                    <div class="form-group row">
-                       
-                        <h6 style="color:black; margin-top: 20px;">อัพโหลดไฟล์รูปภาพ</h6>
-                        <div class="col-sm-5">
-                            <div class="custom-file col-5">
-                                <!-- <input type="file" name="image" id="filepicture" class="custom-file-input" multiple> -->
-                                <input  type="file" name="image" id="image" accept="image/*" />
-                                <!-- <input type="file" name="filepicture[]" id="filepicture" multiple> -->
-                                <label class="custom-file-label"></label>
-                            </div>
-                        </div>
-                    </div>
+<div class="jumbotron jumbotron-fluid ">
+    <div class="container">
+        <div class="form-group row">
+            <label for="" class="col-sm-4 col-form-label text-right"></label>
+            <h6 style="color:Tomato;">คำเตือน!!กรุณาเลือกไฟล์อัพโหลด.</h6>
+            <div class="col-sm-5">
+                <div class="custom-file">
+                    <!-- <input type="file" name="image" id="filepicture" class="custom-file-input" multiple> -->
+                    <input type="file" name="image" id="image" accept="image/*" />
+                    <!-- <input type="file" name="filepicture[]" id="filepicture" multiple> -->
+                    <label class="custom-file-label"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-5 offset-sm-4">
+            </div>
+        </div>
                 </div>
             
                     
@@ -298,11 +302,11 @@
         
         </select>
               
-             ชนิดอุปกรณ์ <select name="topic" id="topic" class="col-12" style="border-radius: 5PX; margin-bottom: 20px;"stary="border-radius: 5PX;">
+             <br>ชนิดอุปกรณ์ <select name="topic" id="topic" class="col-12" style="border-radius: 5PX; margin-bottom: 20px;"stary="border-radius: 5PX;">
             <option value="" selected="selected" style="color: lightgrey; background-color: lightgrey;">ชนิดอุปกรณ์</option>
           </select>
             
-            สาเหตุการชำรุด <select name="chapter" id="chapter" class="col-12" style="border-radius: 5PX; margin-bottom: 20px;"stary="border-radius: 5PX;">
+            <br>สาเหตุการชำรุด <select name="chapter" id="chapter" class="col-12" style="border-radius: 5PX; margin-bottom: 20px;"stary="border-radius: 5PX;">
             <option value="" selected="selected">สาเหตุการชำรุด</option>
           </select>
             
