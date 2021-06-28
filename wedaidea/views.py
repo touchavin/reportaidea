@@ -368,14 +368,14 @@ def bad(request): #หน้า bad
 
         response = requests.request("PUT", url, headers=headers, data=payload)
 
-
+        pathoraclecloud = "https://objectstorage.ap-tokyo-1.oraclecloud.com/p/dI47BfTpwxXJODPhiO1p2wmYqyL0M-6b4TqRxU1ETcPDVFSjOC9sjXxPi9W-NomC/n/peacloud/b/Aidea/o/{}".format(f_image.name)
 
 
         ## save ข้อมูลลง ฐานข้อมูล 
-        img = Image(Customer_number=Customer_number, Accessory=Accessory, Case=Case, Circuit=Circuit, pathimage=pathimage, image=f_image)
+        img = Image(Customer_number=Customer_number, Accessory=Accessory, Case=Case, Circuit=Circuit, pathimage=pathimage, pathoraclecloud=pathoraclecloud, image=f_image)
         img.save()
         
-        context={'data':{'Customer_number':Customer_number, 'Accessory':Accessory, 'Case':Case, 'Circuit':Circuit, 'patsimage':pathimage, 'image':f_image}}
+        context={'data':{'Customer_number':Customer_number, 'Accessory':Accessory, 'Case':Case, 'Circuit':Circuit, 'pathimage':pathimage, 'pathoraclecloud':pathoraclecloud, 'image':f_image}}
         ## save ข้อมูลลง ฐานข้อมูล 
 
     
@@ -528,14 +528,14 @@ def good(request): #หน้า good
         response = requests.request("PUT", url, headers=headers, data=payload)
 
             
-
+        pathoraclecloud = "https://objectstorage.ap-tokyo-1.oraclecloud.com/p/dI47BfTpwxXJODPhiO1p2wmYqyL0M-6b4TqRxU1ETcPDVFSjOC9sjXxPi9W-NomC/n/peacloud/b/Aidea/o/{}".format(f_image.name)
 
 
         ## save ข้อมูลลง ฐานข้อมูล 
-        img = Image(Customer_number=Customer_number, Accessory=Accessory, Case=Case, Circuit=Circuit, pathimage=pathimage, image=f_image)
+        img = Image(Customer_number=Customer_number, Accessory=Accessory, Case=Case, Circuit=Circuit, pathimage=pathimage, pathoraclecloud=pathoraclecloud, image=f_image)
         img.save()
         
-        context={'data':{'Customer_number':Customer_number, 'Accessory':Accessory, 'Case':Case, 'Circuit':Circuit, 'patsimage':pathimage, 'image':f_image}}
+        context={'data':{'Customer_number':Customer_number, 'Accessory':Accessory, 'Case':Case, 'Circuit':Circuit, 'pathimage':pathimage, 'pathoraclecloud':pathoraclecloud, 'image':f_image}}
         ## save ข้อมูลลง ฐานข้อมูล 
 
     

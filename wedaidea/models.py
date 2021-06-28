@@ -19,7 +19,8 @@ class Image(models.Model):
     Accessory = models.CharField(max_length=100, blank=True, null=True)
     Case = models.CharField(max_length=100, blank=True, null=True)
     Customer_number = models.CharField(max_length=100, blank=True, null=True)
-    pathimage = models.CharField(max_length=100, blank=True, null=True)  #เพิ่ม
+    pathimage = models.CharField(max_length=100, blank=True, null=True) #เพิ่ม
+    pathoraclecloud = models.URLField(max_length=500, blank=True, null=True)
     image = models.FileField(upload_to='media/', null=True, blank=True)
     
 
