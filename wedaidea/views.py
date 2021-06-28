@@ -498,7 +498,7 @@ def good(request): #หน้า good
             Case ="DS22"
 
 
-        Case = "GOOD"
+       
 
         #timedate & time in Python
 
