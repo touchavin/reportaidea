@@ -35,124 +35,83 @@
     <link rel="stylesheet" href="{% static 'assets/mobirise/css/mbr-additional.css' %}" type="text/css">
     <title>Aidea</title>
 
-    <style media="screen"> 
-        
-        
-        
-        
-        
-        #subject{
+    <style media="screen">
+        #subject {
             padding: 10px;
-            color:black;
-            background-color:#FFFFFF;
+            color: black;
+            background-color: #FFFFFF;
             border: 1px solid #8A97A3;
             border-radius: 5px;
             cursor: pointer;
             width: 351px;
             height: 40px;
-           
-
         }
-
-        #topic{
+        
+        #topic {
             padding: 10px;
-            color:black;
-            background-color:#FFFFFF;
+            color: black;
+            background-color: #FFFFFF;
             border: 1px solid #8A97A3;
             border-radius: 5px;
             cursor: pointer;
             width: 351px;
             height: 40px;
-
         }
-
-
-
-        #chapter{
+        
+        #chapter {
             padding: 10px;
-            color:black;
-            background-color:#FFFFFF;
+            color: black;
+            background-color: #FFFFFF;
             border: 1px solid #8A97A3;
             border-radius: 5px;
             cursor: pointer;
             width: 351px;
             height: 40px;
-
         }
-
-
-
-        #Customer_number{
+        
+        #Customer_number {
             padding: 10px;
-            color:black;
-            background-color:#FFFFFF;
+            color: black;
+            background-color: #FFFFFF;
             border: 1px solid #8A97A3;
             border-radius: 5px;
             cursor: pointer;
             width: 351px;
             height: 40px;
-
         }
-        #image{
-            padding: 10px;
-            color: rgb(gray ) ;
-            background-color: rgb(204, 244, 237 )  ;
-            border: 1px solid  rgb(gray) ;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #image:hover{
-            
-            background-color:rgb(204, 244, 237 ) ;
-            
-        }
-        .ChooseFile {
-            padding: 10px;
-            color:gray;
-            background-color:rgb(204, 244, 237 ) ;
-            border: 1px solid #000;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-
     </style>
     <form name="myform" method="POST" enctype="multipart/form-data">
-
         {% csrf_token %}
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <script>
+        <script style="font-family:Prompt;">
             var subjectObject = {
-                "115KV": {
-                    "สายดิน": ["ปกติ"],
-                    "ลูกถ้วย": ["ปกติ"],
-                    "สายไฟ": ["ปกติ"],
-                    "จุดต่อ": ["ปกติ"],
-                    "อุปกรณ์ตัดตอน": ["ปกติ"],
+                "115 KV": {
+                    "สายดิน": ["ขาด", "หย่อน", "เป็นสนิม", "จุดสนิม"],
+                    "ลูกถ้วย": ["แตก/บิ่น", "แฟลช", 'แตกลาย', 'เปลี่ยนสี', 'คราปสกปรก'],
+                    "สายไฟ": ["สายแตก", "คลายตัว", "อุปกรณ์จับสายชำรุด"],
+                    "จุดต่อ": ["เปลี่ยนสี/เป็นสนิม", "มีรอยอาร์ด", "บิดงอเสียรูป"],
+                    "อุปกรณ์ตัดตอน": ["บิน", "แตก", "มีรอยอาร์ค"],
 
                 },
-                "33KV": {
-                    "สายดิน": ["ปกติ"],
-                    "ลูกถ้วย": ["ปกติ"],
-                    "สายไฟ": ["ปกติ"],
-                    "จุดต่อ": ["ปกติ"],
-                    "ล่อฟ้า": ["ปกติ"],
-                    "คาปาซิเตอร์": ["ปกติ"],
-                    "อุปกรณ์ตัดตอน": ["ปกติ"],
+                "33 KV": {
+                    "สายดิน": ["ขาด", "หย่อน", "เป็นสนิม", "จุดต่อหลวม"],
+                    "ลูกถ้วย": ["แตก/บิ่น", "แฟลช", 'แตกลาย', 'เปลี่ยนสี', 'คราปสกปรก'],
+                    "สายไฟ": ["สายแตก", "คลายตัว", "อุปกรณ์จับสายชำรุด"],
+                    "จุดต่อ": ["เปลี่ยนสี/เป็นสนิม", "มีรอยอาร์ด", "บิดงอเสียรูป"],
+                    "ล่อฟ้า": ["บิ่นแตก/แตก/ฉีก", "มีรอยอาร์ค", "ผิวสกปรก", "เปลี่ยนสี"],
+                    "คาปาซิเตอร์": ["บิ่น/แตก", "มีรอยอาร์ค", "ผิวสกปรก"],
+
 
                 },
-                "22KV": {
-                    "สายดิน": ["ปกติ"],
-                    "ลูกถ้วย": ["ปกติ"],
-                    "สายไฟ": ["ปกติ"],
-                    "จุดต่อ": ["ปกติ"],
-                    "ล่อฟ้า": ["ปกติ"],
-                    "คาปาซิเตอร์": ["ปกติ"],
-                    "อุปกรณ์ตัดตอน": ["ปกติ"],
+                "22 KV": {
+                    "สายดิน": ["ขาด", "หย่อน", "เป็นสนิม", "จุดต่อหลวม"],
+                    "ลูกถ้วย": ["แตก/บิ่น", "แฟลช", 'แตกลาย', 'เปลี่ยนสี', 'คราปสกปรก'],
+                    "สายไฟ": ["สายแตก", "คลายตัว", "อุปกรณ์จับสายชำรุด"],
+                    "จุดต่อ": ["เปลี่ยนสี/เป็นสนิม", "มีรอยอาร์ด", "บิดงอเสียรูป"],
+                    "ล่อฟ้า": ["บิ่นแตก/แตก/ฉีก", "มีรอยอาร์ค", "ผิวสกปรก", "เปลี่ยนสี"],
+                    "คาปาซิเตอร์": ["บิ่น/แตก", "มีรอยอาร์ค", "ผิวสกปรก"],
                 },
-
-
 
 
 
@@ -161,233 +120,248 @@
             window.onload = function() {
                 var subjectSel = document.getElementById("subject");
                 var topicSel = document.getElementById("topic");
-
+                var chapterSel = document.getElementById("chapter");
                 for (var x in subjectObject) {
                     subjectSel.options[subjectSel.options.length] = new Option(x, x);
                 }
-                subjectSel.onchange = function() {    //empty Chapters- and Topics- dropdowns
-                       
-
+                subjectSel.onchange = function() {    //empty Chapters- and Topics- dropdowns
+                       
+                    chapterSel.length = 1;   
                     topicSel.length = 1;
                     //display correct values
                     for (var y in subjectObject[this.value]) {
                         topicSel.options[topicSel.options.length] = new Option(y, y);
                     }
                 }
-
+                topicSel.onchange = function() {    //empty Chapters dropdown
+                       
+                    chapterSel.length = 1;
+                    //display correct values
+                    var z = subjectObject[subjectSel.value][this.value];
+                    for (var i = 0; i < z.length; i++) {
+                        chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+                    }
+                }
             }
         </script>
 </head>
 
 
 <div class="container-fluid" style=" padding-top: 50px; border-radius: 50%">
-    <section class="header2 cid-sy1JJ6nFZN  mbr-parallax-background"  id="header2-k" >
+    <section class="header2 cid-sy1JJ6nFZN  mbr-parallax-background" id="header2-k">
 
-         <div class="mbr-overlay" style="  border-radius: 15PX; opacity: 0.5; background-color: rgb(204, 244, 237 ) " > </div>
-   
-         <div class="container">
+        <div class="mbr-overlay" style="  border-radius: 15PX; opacity: 0.5; background-color: rgb(204, 244, 237 ) "> </div>
 
-            
-                 <div class="row">
-                    <div class="col-3  float-left  " >                                         
-                        <img src="{% static 'image/7.png' %}" style="width: 60px; margin-top: 5px;">
-                    
-                        
-                    </div>
+        <div class="container">
 
-                    <div class="col-9   display-6 text-center " style="margin-top: 30px;  margin-bottom: 0px;"  > 
-           
-                                <h4 style="font-size: 15px" >อัพโหลดไฟล์รูปภาพอุปกรณ์ปกติ</h4>
-                    </div> 
-            
+
+            <div class="row">
+                <div class="col-3  float-left  ">
+                    <img src="{% static 'image/7.png' %}" style="width: 60px; margin-top: 5px; margin-bottom: 5px;">
+
+
                 </div>
-            
-    
+
+                <div class="col-8   display-6 text-center " style="margin-top: 20px;  margin-bottom: 0px; ">
+
+                    <h6 style="font-size: 16px">อัพโหลดไฟล์รูปภาพอุปกรณ์ปกติ</h6>
+                </div>
+
+            </div>
+
+
         </div>
 
     </section>
 </div>
 <!-- upload file-->
 
-<div class="jumbotron jumbotron-fluid ">
-<div class="container">
-<div class="form-group row">
-<label for="" class="col-sm-4 col-form-label text-right"></label>
-<h6 style="color:Tomato;">คำเตือน!!กรุณาเลือกไฟล์อัพโหลด.</h6>
-<div class="col-sm-5">
-    <div class="custom-file">
-        <!-- <input type="file" name="image" id="filepicture" class="custom-file-input" multiple> -->
-        <input type="file" name="image" id="image" accept="image/*" />
-        <!-- <input type="file" name="filepicture[]" id="filepicture" multiple> -->
-        <label class="custom-file-label"></label>
-    </div>
-</div>
-</div>
-<div class="form-group row">
-<div class="col-sm-5 offset-sm-4">
-</div>
-</div>
-    </div>
-
-        
-      
-        <!-- <div class="form-group row">
-
-            <div class="container">
-                <input type="submit" class="btn btn-primary" name="action" id="btn_submit" value="อัพโหลดไฟล์รูปภาพ" disabled />
-                </button>
-
-            </div>
-            <br>
-            <br>
-        </div> -->
-
-   
-
 <div class="container-fluid ">
-<div class="container">
+    <div class="container">
+        <div class="form-group row">
 
 
-<div class="formBox" ">
-<label for="fname" style="font-size: 16px ">รหัสพนักงาน</label>
-<input class="col-12" style="border-radius: 5PX; margin-bottom: 10px;"stary="border-radius: 5PX;"type="text"  id="Customer_number" name="Customer_number" placeholder="ระบุรหัสพนักงาน">
-</div>
-<!-- <label for="ระบุสำนักงานการไฟฟ้าส่วนภูมิภาคเขต">สำนักงานการไฟฟ้าส่วนภูมิภาคเขต:</label>
-
-<select name="Pea" id="Pea">
-<option value="no" placeholder="ระบุรหัสพนักงาน">ระบุสำนักงานการไฟฟ้าส่วนภูมิภาคเขต</option>
-<optgroup label="ภาคเหนือ">
-<option value="A">เขต 1 จังหวัดเชียงใหม่</option>
-<option value="B">เขต 2 จังหวัดพิษณุโลก</option>
-<option value="C">เขต 3 จังหวัดลพบุรี</option>
-</optgroup>
-<optgroup label="ภาคตะวันออกเฉียงเหนือ">
-<option value="D">เขต 1 จังหวัดอุดรธาณี</option>
-<option value="E">เขต 2 จังหวัดอุบลราชธาณี</option>
-<option value="F">เขต 3 จังหวัดนครราชสีมา</option>
-
-<optgroup label="ภาคกลาง">
-<option value="G">เขต 1 จังหวัดพระนครศรีอยุธยา</option>
-<option value="H">เขต 2 จังหวัดชลบุรี</option>
-<option value="I">เขต 3 จังหวัดนครปฐม</option>
-</optgroup>
-<optgroup label="ภาคใต้">
-<option value="J">เขต 1 จังหวัดเพชรบุรี</option>
-<option value="K">เขต 2 จังหวัดนครศรีธรรมราช</option>
-<option value="L">เขต 3 จังหวัดยะลา</option>
-</optgroup>
-</select>    </div>-->
-
-
-<!-- <div class="container-fluid" name="form1" id="form1" action="/action_page.php">
-<div class="row">
-<div class="container">
-    <label name="subject" >ระบบแรงดัน</label>
-    <input class="col-12" style="border-radius: 5PX; margin-bottom: 10px;"stary="border-radius: 5PX;"type="text"  id="form1" name="subject" action="/action_page.php" placeholder="ระบุรหัสพนักงาน"> -->
-
-
-<form name="form1" id="form1" action="/action_page.php">
-
-ระบบแรงดัน <select name="subject" id="subject" class="col-12" style="border-radius: 5PX; margin-bottom: 20px;"stary="border-radius: 5PX;">
-<option value="" selected="selected" ><h1 style=" color: lightgrey; background-color: lightgrey;">ระบบแรงดัน</h1></option> 
-<!--           
-<div name="form1" id="form1" action="/action_page.php"></div>
-    <select name="subject" id="subject">รหัสพนักงาน</select>
-    <option value="" selected="selected">ระบบแรงดัน</option>
-</div> -->
-
-</select>
-  
- <br>ชนิดอุปกรณ์ <select name="topic" id="topic" class="col-12" style="border-radius: 5PX; margin-bottom: 20px;"stary="border-radius: 5PX;">
-<option value="" selected="selected" style="color: lightgrey; background-color: lightgrey;">ชนิดอุปกรณ์</option>
-</select>
-
-
-
-
-
-<!-- block image no file -->
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    $(document).ready(
-        function() {
-            $('input:file').change(
-                function() {
-                    if ($(this).val()) {
-                        $('input:submit').attr('disabled', false);
-                    }
-                }
-            );
-        });
-</script>
-<!-- Upload file -->
-
-<div class="container-fluid ">
-    <div class="container" style="">
-        <!-- <label for="" class="col-sm-4 col-form-label text-right">อัพโหลดไฟล์รูปภาพ</label>
-            <h6 style="color:Tomato;">คำเตือน!!กรุณาเลือกไฟล์อัพโหลด.</h6>
+            <p style="color:black; margin-top: 20px;">อัพโหลดไฟล์รูปภาพ<span style="color:black; padding-left: 5px;  margin-top: 20px; font-size:16px;color:red" ; class="glyphicon">&#x2a;</span></p>
             <div class="col-sm-5">
-                <div class="custom-file">
-             iv class="form-group row">
-            <       <!-- <input type="file" name="image" id="filepicture" class="custom-file-input" multiple> -->
-                   <!-- <input type="file" name="image" id="image" accept="image/*" />
+                <div class="custom-file col-5">
+                    <!-- <input type="file" name="image" id="filepicture" class="custom-file-input" multiple> -->
+                    <input type="file" name="image" id="image" accept="image/*" />
                     <!-- <input type="file" name="filepicture[]" id="filepicture" multiple> -->
                     <label class="custom-file-label"></label>
                 </div>
-            </div> 
-        </div>
-        <div class="form-group row">
-            <div class="col-sm-5 offset-sm-4">
             </div>
         </div>
-     
-        <div class="form-group row" >
+    </div>
 
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-1">
-                     </div>
 
-                    <div class="col-12 container" style="left: 20%;    ">
-                     
-                       <input type="submit" stary="text-align: center;"  class="col-8  border border-light p-3 mb-4 border: rgb(204, 244, 237 " name="action" id="btn_submit" value="อัพโหลดไฟล์รูปภาพ" disabled />
-                    </div>
 
-                    <div class="col-1">
-                    </div>
-            </div>
+    <!-- <div class="form-group row">
+
+                        <div class="container">
+                            <input type="submit" class="btn btn-primary" name="action" id="btn_submit" value="อัพโหลดไฟล์รูปภาพ" disabled />
+                            </button>
+
+                        </div>
+                        <br>
+                        <br>
+                    </div> -->
+
+
+
+    <div class="container-fluid ">
+        <div class="container">
+
+
+            <div class="formBox" ">
+            <p>รหัสพนักงาน</p>
+             <input class="col-12 " style="border-radius: 5PX; margin-bottom: 10px; "stary="border-radius: 5PX; "  id="Customer_number " name="Customer_number " placeholder="ระบุรหัสพนักงาน ">
+        </div>
+            <!-- <label for="ระบุสำนักงานการไฟฟ้าส่วนภูมิภาคเขต ">สำนักงานการไฟฟ้าส่วนภูมิภาคเขต:</label>
             
-        </div>
+            <select name="Pea " id="Pea ">
+        <option value="no " placeholder="ระบุรหัสพนักงาน ">ระบุสำนักงานการไฟฟ้าส่วนภูมิภาคเขต</option>
+        <optgroup label="ภาคเหนือ ">
+        <option value="A ">เขต 1 จังหวัดเชียงใหม่</option>
+        <option value="B ">เขต 2 จังหวัดพิษณุโลก</option>
+        <option value="C ">เขต 3 จังหวัดลพบุรี</option>
+        </optgroup>
+        <optgroup label="ภาคตะวันออกเฉียงเหนือ ">
+        <option value="D ">เขต 1 จังหวัดอุดรธาณี</option>
+        <option value="E ">เขต 2 จังหวัดอุบลราชธาณี</option>
+        <option value="F ">เขต 3 จังหวัดนครราชสีมา</option>
+        
+        <optgroup label="ภาคกลาง ">
+        <option value="G ">เขต 1 จังหวัดพระนครศรีอยุธยา</option>
+        <option value="H ">เขต 2 จังหวัดชลบุรี</option>
+        <option value="I ">เขต 3 จังหวัดนครปฐม</option>
+        </optgroup>
+        <optgroup label="ภาคใต้ ">
+        <option value="J ">เขต 1 จังหวัดเพชรบุรี</option>
+        <option value="K ">เขต 2 จังหวัดนครศรีธรรมราช</option>
+        <option value="L ">เขต 3 จังหวัดยะลา</option>
+        </optgroup>
+        </select>    </div>-->
+            
+     
+     <!-- <div class="container-fluid " name="form1 " id="form1 " action="/action_page.php ">
+        <div class="row ">
+            <div class="container ">
+                <label name="subject " >ระบบแรงดัน</label>
+                <input class="col-12 " style="border-radius: 5PX; margin-bottom: 10px; "stary="border-radius: 5PX; "type="text "  id="form1 " name="subject " action="/action_page.php " placeholder="ระบุรหัสพนักงาน "> -->
+       
+       
+      <form name="form1 " id="form1 " action="/action_page.php ">
 
-    </div>
-    
+           <p>ระบบแรงดัน<span style ="padding-left: 5px; font-size:16px;color:red; " class="glyphicon ">&#x2a;</span></p>
+            <select name="subject " id="subject " class="col-12 " style="border-radius: 5PX; margin-bottom: 20px; "stary="border-radius: 5PX; ">
+            <option value=" " selected="selected " ><h1 style=" color: lightgrey; background-color: lightgrey; ">ระบบแรงดัน</h1></option> 
+        </select>
+           
+<!--           
+            <div name="form1 " id="form1 " action="/action_page.php "></div>
+                <select name="subject " id="subject ">รหัสพนักงาน</select>
+                <option value=" " selected="selected ">ระบบแรงดัน</option>
+            </div> -->
+        
+   
+            
+                <p>ชนิดอุปกรณ์<span style ="padding-left: 5px; font-size:16px;color:red; " class="glyphicon ">&#x2a;</span></p>
+                <select name="topic " id="topic " class="col-12 " style="border-radius: 5PX; margin-bottom: 20px; "stary="border-radius: 5PX; ">
+                <option value=" " selected="selected " style="color: lightgrey; background-color: lightgrey; ">ชนิดอุปกรณ์</option>
+                </select>
+            
+
+<!--                
+                  <p>สาเหตุการชำรุด<span style ="padding-left: 5px; font-size:16px;color:red; " class="glyphicon ">&#x2a;</span></p>
+                <select name="chapter " id="chapter " class="col-12 " style="border-radius: 5PX; margin-bottom: 20px; "stary="border-radius: 5PX; ">
+                <option value=" " selected="selected ">สาเหตุการชำรุด</option>
+                </select>
+                         -->
+
+
+            <!-- block image no file -->
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+            <script>
+                $(document).ready(
+                    function() {
+                        $('input:file').change(
+                            function() {
+                                if ($(this).val()) {
+                                    $('input:submit').attr('disabled', false);
+                                }
+                            }
+                        );
+                    });
+            </script>
+            <!-- Upload file -->
+
+            <div class="container-fluid ">
+                <div class="container " style=" ">
+                    <!-- <label for=" " class="col-sm-4 col-form-label text-right ">อัพโหลดไฟล์รูปภาพ</label>
+                        <h6 style="color:Tomato; ">คำเตือน!!กรุณาเลือกไฟล์อัพโหลด.</h6>
+                        <div class="col-sm-5 ">
+                            <div class="custom-file ">
+                         iv class="form-group row ">
+                        <       <!-- <input type="file " name="image " id="filepicture " class="custom-file-input " multiple> -->
+                               <!-- <input type="file " name="image " id="image " accept="image/* " />
+                                <!-- <input type="file " name="filepicture[] " id="filepicture " multiple> -->
+                                <label class="custom-file-label "></label>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="form-group row ">
+                        <div class="col-sm-5 offset-sm-4 ">
+                        </div>
+                    </div>
+                 
+                    <div class="form-group row " >
+
+                        <div class="container-fluid ">
+                            <div class="row ">
+                                <div class="col-1 ">
+                                 </div>
+
+                                <div class="col-12 container " style="left: 20%; ">
+                                 
+                                   <input type="submit " style="color:white;text-align:center; background-image: linear-gradient(to right bottom, rgba(126, 233, 192, 1), rgba(68, 167, 235, 1)); border-radius: 10px; " stary="text-align: center;
+                "  class="col-8 border border-light p-3 mb-4 border: rgb(204, 244, 237); " name="action " id="btn_submit " value="อัพโหลดไฟล์รูปภาพ " disabled />
+                                </div>
+                               
+                                <div class="col-1 ">
+                                </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                
 <!-- 
-    <div class="container">
-        <img class="img-fluid" background-image src="{% static 'image/9.png' %}" alt="Chania" width="250" height="250">
-    </div> -->
+                <div class="container ">
+                    <img class="img-fluid " background-image src="{% static 'image/9.png' %} " alt="Chania " width="250 " height="250 ">
+                </div> -->
 
-    <div class="container border border-light p-3 mb-4">
-        <a href="/register/" target="_blank" class="btn btn-primary" role="button">กลับหน้าหลัก</a>
-    </div>
+                <div class="col-12 container border border-light p-3 mb-4 ">
+                    <a href="/register/ " target="_blank " class="btn btn-primary " role="button ">กลับหน้าหลัก</a>
+                </div>
 
-</form>
+        </form>
 
-<!-- Optional JavaScript; choose one of the two! -->
+        <!-- Optional JavaScript; choose one of the two! -->
 
-<!-- Option 1: Bootstrap Bundle with Popper -->
+        <!-- Option 1: Bootstrap Bundle with Popper -->
 
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js " integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p " crossorigin="anonymous "></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js " integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT " crossorigin="anonymous "></script>
 -->
-</body>
+        </body>
 
 
 
-<script src="{% static 'js/jquery-3.5.1.min.js'%}"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js " integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW " crossorigin="anonymous "></script>
+        <script src="{% static 'js/jquery-3.5.1.min.js'%} "></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js " integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW " crossorigin="anonymous "></script>
 
 
 
