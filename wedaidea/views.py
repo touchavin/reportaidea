@@ -606,3 +606,6 @@ def uploadPage2(request):
         return redirect(uploadPage2)
 
     return render(request, 'uploadPage2.html')
+
+def report(request):
+    return render(request, 'report.html')
