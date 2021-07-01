@@ -24,6 +24,7 @@ from wedaidea.views import system
 from wedaidea.views import user
 from wedaidea.views import download
 from wedaidea.views import uploadPage2
+from wedaidea.views import report
 
 from django.conf import settings
 from django.conf.urls.static import static 
@@ -38,6 +39,7 @@ urlpatterns = [
     path('user/', user),
     path('download/', download),
     path('uploadPage2/', uploadPage2),
+    path('report/', report),
     
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

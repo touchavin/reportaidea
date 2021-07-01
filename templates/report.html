@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>InputData</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- link report.js -->
+    <script src="/static/js/report.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <form name="myform" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+        
+        <div class="formBox">
+            <label for="title">รหัสพนักงาน</label>
+            <input type="text" name="Partner" placeholder="รหัสพนักงาน"/>
+        </div>
+        <br>
+        <div class="formBox">
+            <label for="title1">TZPM4</label>
+            <input type="text" name="Zpm4" placeholder="LSD012345"/>
+        </div>
+        <br>
+        <div class="formBox">
+            <label for="yr">สถานี</label>
+            <input type="text" name="Powerstation" placeholder="สถานี"/>
+        </div>
+        <br>
+        <div class="formBox">
+            <label for="title">การไฟฟ้าส่วนภูมิภาค</label>
+            <input type="text" name="Branch" placeholder="สาขา"/>
+        </div>
+        <br>
+        <div class="formBox">
+            <label for="title">แรงดันระบบจำหน่าย</label>
+            <input type="text" name="Power" placeholder="22-33 KV."/>
+        </div>
+        <br>
+        
+        <div class="formBox">
+            <label for="title">วงจรระบบจำหน่าย</label>
+            <input type="text" name="Circuit" placeholder="วงจร"/>
+        </div>
+ 
+
+
+<!-- Upload file -->
+
+<div class="container-fluid ">
+    <div class="container" style="">
+         <label for="" class="col-sm-4 col-form-label text-right">อัพโหลดไฟล์รูปภาพ</label>
+            <h6 style="color:Tomato;">คำเตือน!!กรุณาเลือกไฟล์อัพโหลด.</h6>
+            <div class="col-sm-5">
+                <div class="custom-file">
+             
+
+                   <input type="file" name="image" id="image" accept="image/*" />
+                    
+                    <label class="custom-file-label"></label>
+                </div>
+            </div> 
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-5 offset-sm-4">
+            </div>
+        </div>
+     
+        <div class="form-group row" >
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-1">
+                     </div>
+
+                    <div class="col-12 container" style="left: 20%;    ">
+                     
+                       <input type="submit" name="image" id="image" value="อัพโหลดไฟล์รูปภาพ" disabled />
+                    </div>
+
+                    <div class="col-1">
+                    </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+     
+</body>
+</html>

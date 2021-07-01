@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from  django.contrib.auth.models import User
 from datetime import datetime
-from .models import Image
+from .models import Image, Report
+
+
 from django.contrib.auth import authenticate, login
 
 
@@ -606,3 +608,18 @@ def uploadPage2(request):
         return redirect(uploadPage2)
 
     return render(request, 'uploadPage2.html')
+
+
+
+
+def report(request):
+    if request.method == 'POST':
+        print(request.POST)
+        Partner = request.POST['Partner']
+        f_image = request.FILES['image']
+
+        ## save ข้อมูลลง ฐานข้อมูล 
+        img = Report(Partner=Partner, image=f_image)
+        img.save()
+        return render(request, 'login.html')
+    return render(request, 'report.html')
