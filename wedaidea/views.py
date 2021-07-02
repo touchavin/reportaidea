@@ -620,9 +620,35 @@ def report(request):
 
         f_image = request.FILES['image']
 
+
+
+        filename = request.FILES['image'].name
+        f = os.path.splitext(filename)
+        n = f[0]
+        ext = f[1]
+
+        timestr = time.strftime("%Y%m%d-%H%M%S")
+        f_image.name = "{}_{}{}".format(Zpm4, timestr, ext)
+        print(f_image.name)
+
+        
         ## save ข้อมูลลง ฐานข้อมูล 
         img = Report(Partner=Partner, Zpm4=Zpm4, image=f_image)
         img.save()
+
+        from GPSPhoto import gpsphoto
+        # Get the data from image file and return a dictionary #อ่านค่าlatlong 
+        inputimage = "media/{}".format(f_image.name)
+        print(inputimage)
+        data = gpsphoto.getGPSData(inputimage)
+        latlong = data['Latitude'], data['Longitude']
+        print(data['Latitude'], data['Longitude'])
+        print(latlong)
+
+
+
+
+
 
         def colr(x, y, z):
             return (x/255, y/255, z/255)
@@ -640,7 +666,7 @@ def report(request):
         styleN.alignment = TA_LEFT
         width, height = A4
         
-        f_image = "media/{}".format(f_image)
+        f_image = "media/{}".format(f_image.name)
         logo = f_image
         elements = []
         print(f'Height={height}')
@@ -662,12 +688,12 @@ def report(request):
             fontSize=13,
             leading =10
         )
-        data = [[Paragraph("Dr John Doe's ENT Clinic", style = headstyle)], [Paragraph("Dr John Doe", style = doctorstyle)], [Paragraph("ENT Specialist", style = doctorstyle)], [Paragraph("Registration No. ", style = doctorstyle)]]
+        data = [[Paragraph("TOUCHAVIN", style = headstyle)], [Paragraph("SUPHNOTO", style = doctorstyle)], [Paragraph("PEA", style = doctorstyle)], [Paragraph("Registration No. 505742 ", style = doctorstyle)]]
         elements.append(Table(data, repeatRows=0))
-        line1 = ("Name", "Test", "Age", "20yr")
-        line2 = ("MRD No.", "18","Date", "14-11-2018")
-        line3 = ("No.","#", "Doctor", "Dr.John Doe")
-        data=[line1,line2, line3]
+        line1 = ("Name", "Test", "Date", "TIME")
+        line2 = ("TOUCHAVIN.", "1","Date", timestr)
+        
+        data=[line1,line2]
         patientdetailstable = Table(data)
         patientdetailstable.setStyle(TableStyle([
             ('BACKGROUND', (0, 0), (4, 0), '#CFEAD4'),
@@ -678,15 +704,20 @@ def report(request):
         elements.append(patientdetailstable)
         elements.append(Spacer(1, 20))
         # We use paragraph style because we need to wrap text. We cant directly wrap cells otherwise
-        line1 = ["Sl.", "Medicine" , "Dose", "Freq", "Durn", "Note"]
+        line1 = ["ZPM04", "DEVICETYPE" , "WAYOUT", "CONDITION", "LOCATION", "NOTE"]
         #ตัวแปรในตาราง
-        drug1 = Paragraph('AUGMED Syrup 30ml (AMOXICILLIN 200MG + CLAVULANATE(CLAVULANIC ACID) 28.5MG)', styleN)
-        drug2 = Paragraph('Touchavin', styleN)
-        line2 = ["1", drug1, "1 Tab", "1-0-1", "5 days", ""]
+        drug1 = Paragraph('{}'.format(Zpm4), styleN)
+        # drug2 = Paragraph('{}'.format(DEVICETYPE), styleN)
+        # drug3 = Paragraph('{}'.format(WAYOUT), styleN)
+        # drug4 = Paragraph('{}'.format(DEVICETYPE), styleN)
+        drug5 = Paragraph('{}'.format(latlong), styleN)
+        # drug6 = Paragraph('{}'.format(NOTE), styleN)
+      
+        line2 = [drug1, "Test", "Test", "Test", drug5, timestr]
         line3 = ["2", drug1, "1 Tab", "1-0-1", "5 days", ""]
-        line4 = ["3", drug2, drug1, "505742", "1 days", ""]
-        data=[line1,line2, line3, line4]
-        for i in range(3,20):
+      
+        data=[line1,line2, line3]
+        for i in range(3,5):
             temp = [str(i), "Some Drug here", "5 ml", "1-0-1", "10 days", "No comments"]
             data.append(temp)
 
