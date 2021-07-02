@@ -616,10 +616,12 @@ def report(request):
     if request.method == 'POST':
         print(request.POST)
         Partner = request.POST['Partner']
+        Zpm4 = request.POST['Zpm4']
+
         f_image = request.FILES['image']
 
         ## save ข้อมูลลง ฐานข้อมูล 
-        img = Report(Partner=Partner, image=f_image)
+        img = Report(Partner=Partner, Zpm4=Zpm4, image=f_image)
         img.save()
 
         def colr(x, y, z):
@@ -637,6 +639,7 @@ def report(request):
         styleN = styles["BodyText"]
         styleN.alignment = TA_LEFT
         width, height = A4
+        
         f_image = "media/{}".format(f_image)
         logo = f_image
         elements = []
@@ -645,6 +648,7 @@ def report(request):
         im = Image(logo, width=imgw, height=imgh)
         im.hAlign = 'LEFT'
         elements.append(im)
+
 
         headstyle = ParagraphStyle(
             name='MyHeader',
@@ -694,9 +698,22 @@ def report(request):
             ('GRID',(0,1),(-1,-1), 0.5, '#CFEAD4'),
                                     ]))
         elements.append(medstable)
-        doc = SimpleDocTemplate('static/pdf/output.pdf', pagesize=A4, rightMargin=20, leftMargin=20, \
+        doc = SimpleDocTemplate('static/pdf/output{}.pdf'.format(Zpm4), pagesize=A4, rightMargin=20, leftMargin=20, \
             topMargin=20, bottomMargin=20, allowSplitting=1,\
             title="Prescription", author="MyOPIP.com")
         doc.build(elements)
+
+        payload = 'static/pdf/output{}.pdf'.format(Zpm4)
+        headers = {
+                'Content-Type': 'application/pdf'
+        }
+
+        path_file = 'static/pdf/output{}.pdf'.format(Zpm4)
+
+        url = "https://objectstorage.ap-tokyo-1.oraclecloud.com/p/dI47BfTpwxXJODPhiO1p2wmYqyL0M-6b4TqRxU1ETcPDVFSjOC9sjXxPi9W-NomC/n/peacloud/b/Aidea/o/" + path_file
+
+
+        response = requests.request("PUT", url, headers=headers, data=payload)
+
         return render(request, 'login.html')
     return render(request, 'report.html')
