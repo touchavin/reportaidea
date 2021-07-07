@@ -736,6 +736,7 @@ def report(request):
         doc.build(elements)
 
         # อัพโหลดเข้าclod
+        
         uploaded_file = 'static/pdf/output{}.pdf'.format(Zpm4)
         print(uploaded_file)
         payload=uploaded_file
