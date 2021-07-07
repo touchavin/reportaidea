@@ -617,6 +617,7 @@ def report(request):
         print(request.POST)
         Partner = request.POST['Partner']
         Zpm4 = request.POST['Zpm4']
+        Powerstation = request.POST['Powerstation']
 
         f_image = request.FILES['image']
 
@@ -633,7 +634,7 @@ def report(request):
 
         
         ## save ข้อมูลลง ฐานข้อมูล 
-        img = Report(Partner=Partner, Zpm4=Zpm4, image=f_image)
+        img = Report(Partner=Partner, Zpm4=Zpm4, Powerstation=Powerstation, image=f_image)
         img.save()
 
         from GPSPhoto import gpsphoto
@@ -707,13 +708,13 @@ def report(request):
         line1 = ["ZPM04", "DEVICETYPE" , "WAYOUT", "CONDITION", "LOCATION", "NOTE"]
         #ตัวแปรในตาราง
         drug1 = Paragraph('{}'.format(Zpm4), styleN)
-        # drug2 = Paragraph('{}'.format(DEVICETYPE), styleN)
+        drug2 = Paragraph('{}'.format(Powerstation), styleN)
         # drug3 = Paragraph('{}'.format(WAYOUT), styleN)
         # drug4 = Paragraph('{}'.format(DEVICETYPE), styleN)
         drug5 = Paragraph('{}'.format(latlong), styleN)
         # drug6 = Paragraph('{}'.format(NOTE), styleN)
       
-        line2 = [drug1, "Test", "Test", "Test", drug5, timestr]
+        line2 = [drug1, drug2, "Test", "Test", drug5, timestr]
         line3 = ["2", drug1, "1 Tab", "1-0-1", "5 days", ""]
       
         data=[line1,line2, line3]
@@ -734,7 +735,10 @@ def report(request):
             title="Prescription", author="MyOPIP.com")
         doc.build(elements)
 
-        payload = 'static/pdf/output{}.pdf'.format(Zpm4)
+        # อัพโหลดเข้าclod
+        uploaded_file = 'static/pdf/output{}.pdf'.format(Zpm4)
+        print(uploaded_file)
+        payload=uploaded_file
         headers = {
                 'Content-Type': 'application/pdf'
         }
