@@ -45,13 +45,12 @@ rsa==4.7.2
 scipy==1.7.0
 six==1.15.0
 sqlparse==0.4.1
-tb-nightly==2.6.0a20210622
 tensorboard==2.5.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.0
 termcolor==1.1.0
-tf-estimator-nightly==2.6.0.dev2021061601
-tf-nightly==2.6.0.dev20210622
+tf-estimator-nightly==2.6.0
+tf-nightly==2.6.0
 typing-extensions==3.7.4.3
 urllib3==1.26.5
 Werkzeug==2.0.1
