@@ -21,15 +21,11 @@ gpsphoto==2.2.3
 grpcio==1.34.1
 h5py==3.1.0
 idna==2.10
-Keras==2.4.3
-keras-nightly==2.5.0.dev2021032900
-Keras-Preprocessing==1.1.2
 kiwisolver==1.3.1
 Markdown==3.3.4
 matplotlib==3.4.2
 numpy==1.19.5
 oauthlib==3.1.1
-opencv-python==4.5.2.54
 opt-einsum==3.3.0
 parinya==0.0.27
 piexif==1.1.3
@@ -53,8 +49,6 @@ tb-nightly==2.6.0a20210622
 tensorboard==2.5.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.0
-tensorflow==2.5.0
-tensorflow-estimator==2.5.0
 termcolor==1.1.0
 tf-estimator-nightly==2.6.0.dev2021061601
 tf-nightly==2.6.0.dev20210622
