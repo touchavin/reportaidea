@@ -5,7 +5,7 @@ from .models import Image, Report
 
 
 from django.contrib.auth import authenticate, login
-
+from parinya import LINE
 
 from rest_framework.decorators import api_view
 from rest_framework.decorators import permission_classes
@@ -753,7 +753,10 @@ def report(request):
 
         response = requests.request("PUT", url, headers=headers, data=payload)
         file.close()
-        
+
+       
+        line = LINE('tyslglZgRdqJQoOprVbAMx5aEsiFodXJmGR1OJbSyht')
+        line.sendtext("{}".format(url))
         
         
 
