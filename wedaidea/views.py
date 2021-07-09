@@ -737,14 +737,14 @@ def report(request):
 
         # อัพโหลดเข้าclod
         
-        uploaded_file = 'static/pdf/output{}.pdf'.format(Zpm4)
+        uploaded_file = '/pdf/{}'.format(Zpm4)
         print(uploaded_file)
         payload=uploaded_file
         headers = {
                 'Content-Type': 'application/pdf'
         }
 
-        path_file = 'static/pdf/output{}.pdf'.format(Zpm4)
+        path_file = '/pdf/{}.pdf'.format(Zpm4)
 
         url = "https://objectstorage.ap-tokyo-1.oraclecloud.com/p/dI47BfTpwxXJODPhiO1p2wmYqyL0M-6b4TqRxU1ETcPDVFSjOC9sjXxPi9W-NomC/n/peacloud/b/Aidea/o/" + path_file
 
