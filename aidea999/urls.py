@@ -25,7 +25,6 @@ from wedaidea.views import user
 from wedaidea.views import download
 from wedaidea.views import uploadPage2
 from wedaidea.views import report
-
 from django.conf import settings
 from django.conf.urls.static import static 
 urlpatterns = [
