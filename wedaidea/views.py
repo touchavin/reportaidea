@@ -632,9 +632,11 @@ def report(request):
         f_image.name = "{}_{}{}".format(Zpm4, timestr, ext)
         print(f_image.name)
 
+        pathoraclecloud = "https://objectstorage.ap-tokyo-1.oraclecloud.com/n/peacloud/b/Aidea/o/static%2Fpdf%2Foutput{}.pdf".format(Zpm4)
+
         
         ## save ข้อมูลลง ฐานข้อมูล 
-        img = Report(Partner=Partner, Zpm4=Zpm4, Powerstation=Powerstation, image=f_image)
+        img = Report(Partner=Partner, Zpm4=Zpm4, Powerstation=Powerstation, pathoraclecloud=pathoraclecloud, image=f_image)
         img.save()
 
         from GPSPhoto import gpsphoto
@@ -735,21 +737,25 @@ def report(request):
             title="Prescription", author="MyOPIP.com")
         doc.build(elements)
 
-        # อัพโหลดเข้าclod
+        # อัพโหลดเข้าcloud
         
-        uploaded_file = '/pdf/{}'.format(Zpm4)
-        print(uploaded_file)
-        payload=uploaded_file
+        uploaded_file = 'static/pdf/output{}.pdf'.format(Zpm4)
+        file = open(uploaded_file,'rb')   #เปิดไฟล์ pdfแล้วส่งค่าไปเก็บตัวแปร อัพเข้า cloud
+        payload=file
         headers = {
                 'Content-Type': 'application/pdf'
         }
 
-        path_file = '/pdf/{}.pdf'.format(Zpm4)
+        path_file = 'static/pdf/output{}.pdf'.format(Zpm4)
 
         url = "https://objectstorage.ap-tokyo-1.oraclecloud.com/p/dI47BfTpwxXJODPhiO1p2wmYqyL0M-6b4TqRxU1ETcPDVFSjOC9sjXxPi9W-NomC/n/peacloud/b/Aidea/o/" + path_file
 
 
         response = requests.request("PUT", url, headers=headers, data=payload)
+        file.close()
+        
+        
+        
 
         return render(request, 'login.html')
     return render(request, 'report.html')

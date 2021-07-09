@@ -14,6 +14,7 @@ class Report(models.Model):
     Circuit = models.CharField(max_length=100, blank=True, null=True)
     Distance = models.FloatField(default=0.0, blank=True, null=True)
     GPS = models.FloatField(default=0.0, blank=True, null=True)
+    pathoraclecloud = models.URLField(max_length=500, blank=True, null=True)
     image = models.FileField(upload_to='media/', null=True, blank=True)
 
     def show_image(self): 

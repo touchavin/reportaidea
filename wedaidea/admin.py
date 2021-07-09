@@ -10,7 +10,7 @@ class ImageAdmin(admin.ModelAdmin):
 
 
 class ReportAdmin(admin.ModelAdmin):
-    list_display = ['Day', 'Time', 'Partner', 'Zpm4', 'Powerstation', 'Branch', 'Power', 'Circuit', 'Distance', 'GPS', 'show_image']
+    list_display = ['Day', 'Time', 'Partner', 'Zpm4', 'Powerstation', 'Branch', 'Power', 'Circuit', 'Distance', 'GPS', 'pathoraclecloud', 'show_image']
     list_filter = ['Zpm4']
     search_fields = ['Zpm4', 'Power', 'Circuit']
 
