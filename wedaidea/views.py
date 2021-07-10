@@ -5,6 +5,7 @@ from .models import Image, Report
 
 
 from django.contrib.auth import authenticate, login
+from GPSPhoto import gpsphoto
 from parinya import LINE
 
 from rest_framework.decorators import api_view
@@ -639,7 +640,7 @@ def report(request):
         img = Report(Partner=Partner, Zpm4=Zpm4, Powerstation=Powerstation, pathoraclecloud=pathoraclecloud, image=f_image)
         img.save()
 
-        from GPSPhoto import gpsphoto
+        
         # Get the data from image file and return a dictionary #อ่านค่าlatlong 
         inputimage = "media/{}".format(f_image.name)
         print(inputimage)
