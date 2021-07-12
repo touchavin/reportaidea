@@ -721,7 +721,7 @@ def report(request):
         line3 = ["2", drug1, "1 Tab", "1-0-1", "5 days", ""]
       
         data=[line1,line2, line3]
-        for i in range(3,5):
+        for i in range(3,3):
             temp = [str(i), "Some Drug here", "5 ml", "1-0-1", "10 days", "No comments"]
             data.append(temp)
 
