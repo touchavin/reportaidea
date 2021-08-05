@@ -346,8 +346,7 @@ def bad(request): #หน้า bad
        #timedate & time in Python
 
         timestr = time.strftime("%Y%m%d-%H%M%S")
-
-
+      
         f_image.name = "{}_{}_{}_{}_{}{}".format(Customer_number, Circuit, Accessory, Case, timestr, ext)
         print(f_image.name)
 
